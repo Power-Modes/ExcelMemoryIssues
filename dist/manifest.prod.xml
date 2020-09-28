@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+	xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="ContentApp">
+	<Id>555b4b3f-5674-4966-82e1-93d7b90d5a72</Id>
+	<Version>1.0.0.0</Version>
+	<ProviderName>Contoso</ProviderName>
+	<DefaultLocale>en-US</DefaultLocale>
+	<DisplayName DefaultValue="PerformanceSample1"/>
+	<Description DefaultValue="A template to get started."/>
+	<IconUrl DefaultValue="https://www.contoso.com/assets/icon-32.png"/>
+	<HighResolutionIconUrl DefaultValue="https://www.contoso.com/assets/icon-80.png"/>
+	<SupportUrl DefaultValue="https://www.contoso.com/help"/>
+	<AppDomains>
+		<AppDomain>https://www.contoso.com</AppDomain>
+	</AppDomains>
+	<Hosts>
+		<Host Name="Workbook"/>
+	</Hosts>
+	<DefaultSettings>
+		<SourceLocation DefaultValue="https://www.contoso.com/contentpane.html"/>
+		<RequestedWidth>520</RequestedWidth>
+		<RequestedHeight>500</RequestedHeight>
+	</DefaultSettings>
+	<Permissions>ReadWriteDocument</Permissions>
+	<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+		<Hosts>
+			<Host xsi:type="Workbook">
+				<DesktopFormFactor>
+					<GetStarted>
+						<Title resid="GetStarted.Title"/>
+						<Description resid="GetStarted.Description"/>
+						<LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+					</GetStarted>
+				</DesktopFormFactor>
+			</Host>
+		</Hosts>
+		<Resources>
+			<bt:Images>
+				<bt:Image id="Icon.16x16" DefaultValue="https://www.contoso.com/assets/icon-16.png"/>
+				<bt:Image id="Icon.32x32" DefaultValue="https://www.contoso.com/assets/icon-32.png"/>
+				<bt:Image id="Icon.80x80" DefaultValue="https://www.contoso.com/assets/icon-80.png"/>
+			</bt:Images>
+			<bt:Urls>
+				<bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
+				<bt:Url id="Commands.Url" DefaultValue="https://www.contoso.com/commands.html"/>
+				<bt:Url id="ContentPane.Url" DefaultValue="https://www.contoso.com/contentpane.html"/>
+			</bt:Urls>
+			<bt:ShortStrings>
+				<bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
+			</bt:ShortStrings>
+			<bt:LongStrings>
+				<bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Content Pane' button to get started."/>
+			</bt:LongStrings>
+		</Resources>
+	</VersionOverrides>
+</OfficeApp>
