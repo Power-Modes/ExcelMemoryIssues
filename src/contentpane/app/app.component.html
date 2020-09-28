@@ -1,0 +1,62 @@
+<main class="ms-welcome__main">
+
+
+    <p>Issue: Memory use increases and persists after adding to Table, Range or Excel.Setting from Excel Content Add-in.
+    </p>
+    <p>Add Items with the Add-in while watching the Excel Memory level in Task Manager.</p>
+
+    <table>
+        <tr>
+            <td>
+                <div role="button" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20"
+                    (click)="addTableItem()">
+                    <span class="ms-Button-label">Add Table Item</span>
+                    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+                </div>
+
+
+            </td>
+            <td>
+                <div role="button" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20"
+                    (click)="addRangeItem()">
+                    <span class="ms-Button-label">Add Range Item</span>
+                    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <br />
+
+    <label for="chkAddToSetting">
+        Save JSON Data with Excel.Settings
+        <input type="checkbox" id="chkAddToSetting" name="chkAddToSetting" (click)="togglePropertyBag();">
+    </label>
+
+
+    <br />
+
+    <table>
+        <tr>
+            <td>
+                <div role="button" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20"
+                    (click)="loadTableData()">
+                    <span class="ms-Button-label">Load Table Data</span>
+                    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+                </div>
+
+            </td>
+            <td>
+                <div role="button" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20"
+                    (click)="loadRangeData()">
+                    <span class="ms-Button-label">Load Range Data</span>
+                    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <br />
+
+    <textarea style="width:100%;" rows="7">{{dataString}}</textarea>
+</main>
