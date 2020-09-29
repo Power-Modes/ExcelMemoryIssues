@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-	xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="ContentApp">
-	<Id>555b4b3f-5674-4966-82e1-93d7b90d5a72</Id>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+	<Id>5ebc680b-a6e2-41f6-bd15-9ef42c0180b4</Id>
 	<Version>1.0.0.0</Version>
 	<ProviderName>Contoso</ProviderName>
 	<DefaultLocale>en-US</DefaultLocale>
-	<DisplayName DefaultValue="PerformanceSample1"/>
+	<DisplayName DefaultValue="ExcelMemoryIssue"/>
 	<Description DefaultValue="A template to get started."/>
 	<IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
 	<HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-80.png"/>
@@ -20,8 +17,6 @@
 	</Hosts>
 	<DefaultSettings>
 		<SourceLocation DefaultValue="https://localhost:3000/index.html"/>
-		<RequestedWidth>520</RequestedWidth>
-		<RequestedHeight>500</RequestedHeight>
 	</DefaultSettings>
 	<Permissions>ReadWriteDocument</Permissions>
 	<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -33,6 +28,35 @@
 						<Description resid="GetStarted.Description"/>
 						<LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
 					</GetStarted>
+					<FunctionFile resid="Commands.Url"/>
+					<ExtensionPoint xsi:type="PrimaryCommandSurface">
+						<OfficeTab id="TabHome">
+							<Group id="CommandsGroup">
+								<Label resid="CommandsGroup.Label"/>
+								<Icon>
+									<bt:Image size="16" resid="Icon.16x16"/>
+									<bt:Image size="32" resid="Icon.32x32"/>
+									<bt:Image size="80" resid="Icon.80x80"/>
+								</Icon>
+								<Control xsi:type="Button" id="TaskpaneButton">
+									<Label resid="TaskpaneButton.Label"/>
+									<Supertip>
+										<Title resid="TaskpaneButton.Label"/>
+										<Description resid="TaskpaneButton.Tooltip"/>
+									</Supertip>
+									<Icon>
+										<bt:Image size="16" resid="Icon.16x16"/>
+										<bt:Image size="32" resid="Icon.32x32"/>
+										<bt:Image size="80" resid="Icon.80x80"/>
+									</Icon>
+									<Action xsi:type="ShowTaskpane">
+										<TaskpaneId>ButtonId1</TaskpaneId>
+										<SourceLocation resid="Taskpane.Url"/>
+									</Action>
+								</Control>
+							</Group>
+						</OfficeTab>
+					</ExtensionPoint>
 				</DesktopFormFactor>
 			</Host>
 		</Hosts>
@@ -45,13 +69,16 @@
 			<bt:Urls>
 				<bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
 				<bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
-				<bt:Url id="ContentPane.Url" DefaultValue="https://localhost:3000/index.html"/>
+				<bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html"/>
 			</bt:Urls>
 			<bt:ShortStrings>
 				<bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
+				<bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
+				<bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
 			</bt:ShortStrings>
 			<bt:LongStrings>
-				<bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Content Pane' button to get started."/>
+				<bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
+				<bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane"/>
 			</bt:LongStrings>
 		</Resources>
 	</VersionOverrides>
