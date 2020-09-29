@@ -50,8 +50,8 @@ module.exports = async (env, options) => {
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        filename: "contentpane.html",
-        template: "./src/contentpane/contentpane.html",
+        filename: "index.html",
+        template: "./src/contentpane/index.html",
         chunks: ["polyfill", "contentpane"]
       }),
       new CopyWebpackPlugin({
